@@ -6,28 +6,31 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="litherGray">#A1A1A1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="litherGray">#939393</color>
     <color name="colorAccent">#ff7058</color>
+    <color name="red_500" >#FD0000</color>
+    <color name="red_800">#ba0000</color>
+    <color name="red_900">#3e0000</color>
 
     <array name="random_color">
-        <item name="red_400" type="color">#e84e40</item>
-        <item name="pink_400" type="color">#ec407a</item>
-        <item name="purple_400" type="color">#ab47bc</item>
-        <item name="deep_purple_400" type="color">#7e57c2</item>
-        <item name="indigo_400" type="color">#5c6bc0</item>
-        <item name="blue_400" type="color">#738ffe</item>
-        <item name="light_blue_400" type="color">#29b6f6</item>
-        <item name="cyan_400" type="color">#26c6da</item>
-        <item name="teal_400" type="color">#26a69a</item>
-        <item name="green_400" type="color">#2baf2b</item>
-        <item name="light_green_400" type="color">#9ccc65</item>
-        <item name="lime_400" type="color">#d4e157</item>
-        <item name="yellow_400" type="color">#ffee58</item>
-        <item name="orange_400" type="color">#ffa726</item>
-        <item name="deep_orange_400" type="color">#ff7043</item>
-        <item name="brown_400" type="color">#8d6e63</item>
-        <item name="grey_400" type="color">#bdbdbd</item>
-        <item name="blue_grey_400" type="color">#78909c</item>
+        <item name="red_400" type="color">#730F06</item>
+        <item name="pink_400" type="color">#71082B</item>
+        <item name="purple_400" type="color">#650A75</item>
+        <item name="deep_purple_400" type="color">#2C0968</item>
+        <item name="indigo_400" type="color">#0D1D7A</item>
+        <item name="blue_400" type="color">#102370</item>
+        <item name="light_blue_400" type="color">#0E5B7E</item>
+        <item name="cyan_400" type="color">#13909F</item>
+        <item name="teal_400" type="color">#09655C</item>
+        <item name="green_400" type="color">#0A6A0A</item>
+        <item name="light_green_400" type="color">#386109</item>
+        <item name="lime_400" type="color">#707A0B</item>
+        <item name="yellow_400" type="color">#5A520B</item>
+        <item name="orange_400" type="color">#6A440B</item>
+        <item name="deep_orange_400" type="color">#83290D</item>
+        <item name="brown_400" type="color">#684F46</item>
+        <item name="grey_400" type="color">#717070</item>
+        <item name="blue_grey_400" type="color">#2E5D75</item>
     </array>
 </resources>

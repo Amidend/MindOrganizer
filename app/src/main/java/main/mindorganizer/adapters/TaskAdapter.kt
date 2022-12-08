@@ -30,18 +30,19 @@ class TaskAdapter(val list: List<TaskModel>) : RecyclerView.Adapter<TaskAdapter.
     }
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(todoModel: TaskModel) {
+        fun bind(taskModel: TaskModel) {
             with(itemView) {
                 val colors = resources.getIntArray(R.array.random_color)
                 val randomColor = colors[Random().nextInt(colors.size)]
                 viewColorTag.setBackgroundColor(randomColor)
-                txtShowTask.text = todoModel.text
-                txtShowCategory.text = todoModel.category
-                updateTime(todoModel.time)
-                updateDate(todoModel.date)
+                txtShowTask.text = taskModel.text
+                txtShowCategory.text = taskModel.category
+                updateTime(taskModel.time)
+                updateDate(taskModel.date)
 
             }
         }
+
         private fun updateTime(time: Long) {
             //Mon, 5 Jan 2020
             val myformat = "h:mm a"
@@ -60,3 +61,5 @@ class TaskAdapter(val list: List<TaskModel>) : RecyclerView.Adapter<TaskAdapter.
     }
 
 }
+
+private fun Int.toBoolean(): Boolean =if(this==1) true else false

@@ -7,24 +7,25 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.DatePicker
 import android.widget.TimePicker
+import androidx.lifecycle.Observer
 import androidx.appcompat.app.AppCompatActivity
-import main.mindorganizer.R
-import main.mindorganizer.database.AppDatabase
 import kotlinx.android.synthetic.main.activity_newtask.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import main.mindorganizer.R
+import main.mindorganizer.adapters.TaskAdapter
+import main.mindorganizer.database.AppDatabase
 import main.mindorganizer.database.TaskModel
 import java.text.SimpleDateFormat
 import java.util.*
 
-class NewTaskActivity  : AppCompatActivity(), View.OnClickListener {
+class ExistTaskActivity  : AppCompatActivity(), View.OnClickListener{
 
     private lateinit var myCalendar: Calendar
     private lateinit var dateSetListener: DatePickerDialog.OnDateSetListener
     private lateinit var timeSetListener: TimePickerDialog.OnTimeSetListener
-
     private var finalDate = 0L
     private var finalTime = 0L
 
@@ -35,11 +36,10 @@ class NewTaskActivity  : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_newtask)
+        setContentView(R.layout.activity_existtask)
         dateEdt.setOnClickListener(this)
         timeEdt.setOnClickListener(this)
         saveBtn.setOnClickListener(this)
-
         setUpSpinner()
     }
     private fun setUpSpinner() {
@@ -69,7 +69,7 @@ class NewTaskActivity  : AppCompatActivity(), View.OnClickListener {
 
         GlobalScope.launch(Dispatchers.Main) {
             val id = withContext(Dispatchers.IO) {
-                return@withContext db.todoDao().insertTask(
+                return@withContext db.todoDao().changeTask(
                     TaskModel(
                         textOfTask,
                         category,
@@ -80,7 +80,6 @@ class NewTaskActivity  : AppCompatActivity(), View.OnClickListener {
             }
             finish()
         }
-
     }
     private fun setTimeListener() {
         myCalendar = Calendar.getInstance()
@@ -122,7 +121,6 @@ class NewTaskActivity  : AppCompatActivity(), View.OnClickListener {
         val sdf = SimpleDateFormat(myformat)
         finalTime = myCalendar.time.time
         timeEdt.setText(sdf.format(myCalendar.time))
-
     }
     private fun updateDate() {
         //Mon, 5 Jan 2020
@@ -130,8 +128,7 @@ class NewTaskActivity  : AppCompatActivity(), View.OnClickListener {
         val sdf = SimpleDateFormat(myformat)
         finalDate = myCalendar.time.time
         dateEdt.setText(sdf.format(myCalendar.time))
-
         timeInptLay.visibility = View.VISIBLE
-
     }
 }
+
